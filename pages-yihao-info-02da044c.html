@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壹号娱乐 – 轻松识别 · 快速了解</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+        }
+        body {
+            background: linear-gradient(145deg, #faecd2 0%, #f7d9c4 50%, #f3c9b0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.25rem;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            padding: 2.2rem 2.8rem;
+            box-shadow: 0 20px 35px -10px rgba(160, 90, 45, 0.15), 0 6px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 22px 40px -12px rgba(140, 70, 30, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3rem;
+        }
+        .hero-inner {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffefe3 100%);
+            border-radius: 42px;
+            padding: 3rem 2.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 8px 24px rgba(200, 140, 90, 0.12);
+        }
+        .hero-text {
+            flex: 2 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #4d2e1a;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+        .hero-text h1 span {
+            background: linear-gradient(90deg, #b2642a, #d48d4b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4d3322;
+            max-width: 480px;
+            margin-bottom: 1.6rem;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: #d48d4b;
+            color: #fff9f0;
+            font-weight: 500;
+            padding: 0.75rem 2.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(180, 100, 30, 0.25);
+            transition: background 0.2s, transform 0.15s;
+        }
+        .hero-cta:hover {
+            background: #bc7a3a;
+            transform: scale(1.02);
+        }
+        .hero-visual {
+            flex: 1 1 160px;
+            text-align: center;
+            font-size: 4.5rem;
+            opacity: 0.5;
+            color: #b48a6a;
+            letter-spacing: 6px;
+            font-weight: 300;
+            user-select: none;
+        }
+
+        /* 三列优势 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+        .feature-card {
+            background: #fffffffa;
+            border-radius: 32px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 8px 18px rgba(110, 60, 20, 0.06);
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .feature-card:hover {
+            background: #fcf7f0;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 22px rgba(140, 85, 35, 0.10);
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+            color: #b76a2e;
+        }
+        .feature-card h3 {
+            font-size: 1.25rem;
+            color: #3e2a1a;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .feature-card p {
+            color: #5f4a36;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* 说明区 */
+        .explain-section {
+            margin: 2.5rem 0;
+        }
+        .explain-section .card {
+            padding: 2.4rem 2.6rem;
+        }
+        .explain-section h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #3b2718;
+            margin-bottom: 0.9rem;
+            border-left: 5px solid #d48d4b;
+            padding-left: 1rem;
+        }
+        .explain-section p {
+            color: #4e3825;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .explain-highlight {
+            background: #f8ede2;
+            border-radius: 40px;
+            padding: 1rem 1.8rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            color: #4f331d;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 2.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+        }
+        .faq-item {
+            background: #fffffffa;
+            flex: 1 1 280px;
+            border-radius: 32px;
+            padding: 1.6rem 1.8rem;
+            box-shadow: 0 6px 14px rgba(120, 70, 30, 0.04);
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: #3b2718;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .faq-item h4::before {
+            content: "Q";
+            background: #d48d4b30;
+            color: #a56630;
+            font-weight: 600;
+            font-size: 0.9rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .faq-item p {
+            color: #5a4230;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-left: 0.2rem;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 2rem;
+            text-align: center;
+            background: #ffffffd9;
+            backdrop-filter: blur(4px);
+            border-radius: 60px;
+            padding: 1.2rem 2.5rem;
+            font-size: 0.95rem;
+            color: #4d392b;
+            box-shadow: 0 4px 8px rgba(100, 55, 20, 0.05);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem 1.5rem;
+        }
+        .footer-links a {
+            color: #9f6a38;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border 0.15s, color 0.15s;
+        }
+        .footer-links a:hover {
+            color: #6f421f;
+            border-bottom-color: #c28242;
+        }
+        .footer-links .brand-link {
+            background: #e9d9ca;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+
+        /* 响应式 */
+        @media (max-width: 750px) {
+            .hero-inner {
+                padding: 2.2rem 1.8rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero-visual {
+                margin-top: 1.2rem;
+                font-size: 3.2rem;
+                align-self: flex-end;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.8rem 1.5rem;
+            }
+            .explain-section .card {
+                padding: 1.8rem 1.5rem;
+            }
+            .faq-summary {
+                flex-direction: column;
+            }
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                padding: 1.2rem 1.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HERO 区 -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>一眼认出 <span>壹号娱乐</span></h1>
+                <p>一个聚焦娱乐内容整合与信息指引的站点。无论你是初次接触还是想快速确认用途，这里都能让你在几秒内找到方向。</p>
+                <a href="https://pages-yihao.com" class="hero-cta">壹号娱乐</a>
+            </div>
+            <div class="hero-visual">
+                <span>✦</span> <span>✦</span> <span>✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优势区 三卡片 -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">◈</div>
+            <h3>清晰归类</h3>
+            <p>内容按场景与兴趣分组，不必在信息堆里翻找。每个模块都对应明确用途。</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">◈</div>
+            <h3>轻量直达</h3>
+            <p>页面结构直接，减少多余跳转。你想了解的部分通常就在下一段。</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">◈</div>
+            <h3>温和指引</h3>
+            <p>没有生硬推销，只有平实的介绍。帮助访问者自己判断是否与需求匹配。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：从用户想快速识别用途的角度 -->
+    <section class="explain-section">
+        <div class="card">
+            <h2>这个页面到底在说什么？</h2>
+            <p>许多访客来到一个陌生站点，第一反应是：“这是做什么的？” 我们理解这种感受。<br><br>
+                <a href="https://pages-yihao.com" style="color:#9f6a38; font-weight:500; text-decoration:underline;">壹号娱乐</a> 提供的是一份经过梳理的内容集合——涵盖休闲资讯、兴趣话题与实用条目。网站并不输出夸张承诺，而是作为一个信息起点，让每个浏览者自己决定下一步。</p>
+            <p>从布局到用词，每个细节都为了降低识别负担。你不需要反复猜测某个链接的含义，文字本身已经告诉你答案。</p>
+            <div class="explain-highlight">🔍 识别成本趋近于零 · 这就是设计目标</div>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要（三条，温和风格） -->
+    <div class="faq-summary">
+        <div class="faq-item">
+            <h4>这里的内容更新频繁吗？</h4>
+            <p>会根据实际情况做适度调整，保持信息的新鲜感与准确性，但不会为了更新而更新。</p>
+        </div>
+        <div class="faq-item">
+            <h4>是否需要注册或登录？</h4>
+            <p>目前所有可见内容均为直接访问，无需注册或留下任何信息。浏览体验是开放的。</p>
+        </div>
+        <div class="faq-item">
+            <h4>和普通的娱乐站有什么不同？</h4>
+            <p>更注重内容的识别效率与表达克制。你看到的就是它的主要面貌，没有隐藏的干扰层。</p>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <span>更多信息请浏览</span>
+        <a href="https://pages-yihao.com" class="brand-link">壹号娱乐</a>
+        <span>·</span>
+        <a href="https://pages-yihao.com" style="border-bottom:1px dashed #b48a6a;">壹号娱乐</a>
+        <span>·</span>
+        <a href="https://pages-yihao.com" style="border-bottom:1px dashed #b48a6a;">壹号娱乐</a>
+        <span>·</span>
+        <span style="opacity:0.5;">温和 · 直观 · 不迷路</span>
+    </div>
+
+    <!-- 极简装饰行（无实质链接，仅为视觉留白） -->
+    <div style="height:1.5rem;"></div>
+
+</div>
+</body>
+</html>
