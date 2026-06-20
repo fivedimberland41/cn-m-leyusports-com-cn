@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空体育 · 信息速览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f6f0;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #1e1e1c;
+            line-height: 1.6;
+            padding: 0 1.2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.4rem 0 3rem;
+        }
+
+        /* hero */
+        .hero {
+            border-left: 6px solid #2d2a24;
+            padding: 2rem 1.8rem;
+            margin-bottom: 2.8rem;
+            background: #f2efe9;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1a1814;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #4c4a45;
+            max-width: 560px;
+        }
+
+        /* section 通用 */
+        section {
+            margin-bottom: 2.4rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 530;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #dbd5cb;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            color: #2b2824;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 520;
+            margin: 1rem 0 0.4rem;
+            color: #302c26;
+        }
+
+        p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            color: #2b2822;
+        }
+
+        .highlight-box {
+            background: #ece8e0;
+            padding: 1.2rem 1.6rem;
+            border-radius: 10px;
+            border-left: 5px solid #b5ab9a;
+            margin: 1.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .highlight-box strong {
+            font-weight: 580;
+            color: #1f1c17;
+        }
+
+        .inline-label {
+            background: #e3ddd2;
+            padding: 0.08rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 480;
+            color: #2f2b25;
+            display: inline-block;
+            margin-right: 0.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 550;
+            margin-bottom: 0.15rem;
+            color: #23201b;
+        }
+
+        .faq-item .a {
+            color: #3d3933;
+            padding-left: 0.8rem;
+            border-left: 2px dotted #c5beb0;
+            margin-left: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+
+        .feature-card {
+            background: #f1ede6;
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #ddd7cc;
+        }
+
+        .feature-card strong {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .foot-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #d6cfc2;
+            font-size: 0.9rem;
+            color: #5b554b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .foot-note a {
+            color: #3f3a32;
+            text-decoration: none;
+            border-bottom: 1px solid #a89f8f;
+            font-weight: 440;
+        }
+
+        .foot-note a:hover {
+            border-bottom-color: #1e1c18;
+            color: #1c1914;
+        }
+
+        .link-sentence {
+            background: #efeae1;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            display: inline-block;
+            font-size: 0.95rem;
+            margin: 0.2rem 0;
+        }
+
+        a {
+            color: #3e372d;
+            text-decoration: underline 1.2px #b5aa98;
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: #15120c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 0 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .hero {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .faq-item .a {
+                padding-left: 0.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 区域 -->
+    <div class="hero">
+        <h1>星空体育 · 定位速读</h1>
+        <div class="sub">面向体育资讯与赛事追踪的信息入口，用户可快速判断该平台是否契合自身需求。</div>
+    </div>
+
+    <!-- 介绍 / 场景说明 -->
+    <section>
+        <h2>平台概览</h2>
+        <p><span class="inline-label">体育</span><span class="inline-label">资讯</span> 
+        <a href="https://c-zh-xingkong.com">星空体育</a> 是一个以体育内容聚合与数据展示为主的站点，覆盖足球、篮球、网球等主流项目。页面围绕赛事动态、队伍数据、赛程提示等模块展开，适合希望集中获取体育信息的浏览者。</p>
+
+        <div class="highlight-box">
+            <strong>📌 典型使用场景</strong><br>
+            用户通过首页导航或分类标签快速定位特定联赛；赛前查阅交锋记录，赛后浏览简要复盘。信息结构偏向工具化，减少无关干扰。
+        </div>
+
+        <p>与综合性体育门户相比，<a href="https://c-zh-xingkong.com">星空体育</a> 在内容密度与视觉层级上做了取舍——重点信息使用卡片、列表、对比模块呈现，减少大段通稿式文字。适合习惯扫读的访问者。</p>
+    </section>
+
+    <!-- 优势区 (特点) -->
+    <section>
+        <h2>内容组织特点</h2>
+        <div class="grid-2">
+            <div class="feature-card">
+                <strong>赛事卡片 · 关键字段前置</strong>
+                <span style="font-size:0.95rem;color:#3d3933;">对阵双方、时间、比分、联赛标识在同一卡片内，便于横向对比。</span>
+            </div>
+            <div class="feature-card">
+                <strong>数据表格 · 紧凑可扫视</strong>
+                <span style="font-size:0.95rem;color:#3d3933;">积分、进球、助攻等核心指标以表格或徽标形式呈现，无需层层跳转。</span>
+            </div>
+            <div class="feature-card">
+                <strong>赛程与结果分区</strong>
+                <span style="font-size:0.95rem;color:#3d3933;">已结束 / 即将开始 / 进行中 三类状态自动归类，减少混淆。</span>
+            </div>
+            <div class="feature-card">
+                <strong>低干扰界面</strong>
+                <span style="font-size:0.95rem;color:#3d3933;">无弹窗浮层、无限滚动、自动播放视频，信息获取节奏由用户控制。</span>
+            </div>
+        </div>
+        <p style="margin-top:0.6rem;">以上结构并非一成不变，具体模块可能根据赛季或运营阶段微调。建议直接浏览 <a href="https://c-zh-xingkong.com">星空体育</a> 当前首页，以最新布局为准。</p>
+    </section>
+
+    <!-- 说明区 (补充背景) -->
+    <section>
+        <h2>使用说明</h2>
+        <p>网站采用左右分区 + 顶部导航的基本框架。左侧或顶栏可切换联赛/项目；中部为主要内容区。部分页面包含筛选器（日期、联赛、队伍）。</p>
+
+        <div class="highlight-box" style="border-left-color:#9b8f7b;">
+            <strong>⏺ 提示</strong> 本站未提供用户注册、评论、直播流或博彩功能，纯粹作为体育信息展示站点。数据来源请参阅页面底部标注。若遇到链接失效或数据延迟，可稍后刷新或检查对应联赛是否处于休赛期。
+        </div>
+
+        <p>移动端适配以垂直堆叠为主，卡片宽度自适应。建议在手机浏览器中横屏浏览某些宽表格，以获得更佳体验。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>常见疑问 · 摘要</h2>
+
+        <div class="faq-item">
+            <div class="q">Q: 星空体育主要提供哪些运动项目的数据？</div>
+            <div class="a">覆盖足球（五大联赛、欧冠、亚冠等）、篮球（NBA、CBA、欧洲联赛）、网球（四大满贯、ATP/WTA）及部分格斗、电竞项目。具体列表以首页导航栏为准。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q: 赛事数据更新频率如何？</div>
+            <div class="a">比分、赛程、排名在比赛进行期间实时刷新；赛后统计（射门、控球率等）通常在完赛15~30分钟内完成录入。休赛期数据固定。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q: 是否支持按队伍或日期检索？</div>
+            <div class="a">部分页面提供搜索框和日历筛选器。建议直接使用浏览器“查找”功能（Ctrl+F）在当前页快速定位队伍名称。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q: 页面中的外链或数据来源可靠吗？</div>
+            <div class="a">站点引用的公开数据来自合作数据供应商及官方统计机构，具体可查看每个表格下方的来源标注。如有疑问可通过页面底部联系方式反馈。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接 & 版权 -->
+    <div class="foot-note">
+        <span>© 星空体育 · 信息索引</span>
+        <span>主页：<a href="https://c-zh-xingkong.com">星空体育</a></span>
+        <span style="font-size:0.85rem;color:#6f675c;">页面内容仅供参考，结构以实际站点为准。</span>
+    </div>
+
+    <!-- 隐式内嵌链接（句子中自然出现） -->
+    <div style="margin-top:1rem;font-size:0.9rem;color:#5e574c;text-align:right;">
+        若需了解完整项目列表，可前往 <a href="https://c-zh-xingkong.com">星空体育</a> 首页浏览导航区。
+    </div>
+</div>
+</body>
+</html>
